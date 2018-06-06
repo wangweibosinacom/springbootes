@@ -16,6 +16,12 @@ public class UserController
 	@Autowired
 	private UserService userService;
 	
+	
+	@RequestMapping(value = "/index")
+    public String toIndex(LogingUse user){
+        return "index";
+    }
+	
     @ResponseBody
     @RequestMapping(value = "/add", produces = {"application/json;charset=UTF-8"})
     public int addUser(LogingUse user){
