@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/coruntries" xmlns:tns="http://www.example.org/coruntries" elementFormDefault="qualified">
+
+    <element name="getCountryRequest" type="tns:name"></element>
+    
+    <element name="getCountryResponse" type="tns:country"></element>
+
+    <complexType name="country">
+    	<sequence>
+    		<element name="name" type="string"></element>
+    		<element name="population" type="string"></element>
+    		<element name="capital" type="string"></element>
+    		<element name="currency" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+
+    <complexType name="name">
+    	<sequence>
+    		<element name="name" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+
+</schema>

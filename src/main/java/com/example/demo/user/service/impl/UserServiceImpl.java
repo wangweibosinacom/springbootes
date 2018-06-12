@@ -1,6 +1,8 @@
 package com.example.demo.user.service.impl;
 
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,11 @@ public class UserServiceImpl implements UserService {
 	private LogingUserDao userDao ;
 	@Override
 	public int addUser(LogingUse user) {
+		Date date;
+		user.setId(UUID.randomUUID().toString().replaceAll("-", ""));
+		user.setCreateTime(date = new Date());
+		user.setUpTime(date);
+		user.setState("1");
 		return userMapper.insert(user);
 	}
 
