@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.user.model.LogingUse;
 import com.example.demo.user.service.UserService;
@@ -25,8 +26,8 @@ public class UserController
 	
 	
 	@RequestMapping(value = "/", method=RequestMethod.GET)
-    public String toIndex(LogingUse user){
-        return "/index";
+    public ModelAndView toIndex(){
+        return new ModelAndView("index");
     }
     @ApiOperation(value="创建用户", notes="根据User对象创建用户")
     @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
@@ -38,9 +39,12 @@ public class UserController
 
     @ResponseBody
     @ApiOperation(value="获取用户列表", notes="")
-    @RequestMapping(value = "/all/{pageNum}/{pageSize}", produces = {"application/json;charset=UTF-8"}, method=RequestMethod.GET)
+    @RequestMapping(value = "/all/{pageNum}/{pageSize}", 
+    produces = {"application/json;charset=UTF-8"}, 
+    method=RequestMethod.GET)
     public Object findAllUser(@PathVariable("pageNum") int pageNum, @PathVariable("pageSize") int pageSize)
     {
+    	System.out.println("pageNum:"+pageNum +"--pageSize:" +pageSize);
         return userService.findAllUser(pageNum,pageSize);
     }
 }

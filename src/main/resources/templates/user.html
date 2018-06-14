@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script src="../webjars/jquery/3.1.1/jquery.min.js"></script>
+<script src="../webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" th:href="@{../webjars/bootstrap/3.3.5/css/bootstrap.min.css}"/>
+	
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body ms-controller="viewmodel">
+<h1 th:text="${msg}">Hello World</h1>
+<button type="button" class="btn btn-primary" style="margin: 10px;" ms-click="@request">查询</button>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td class="active">id</td>
+        <td class="success">姓名</td>
+        <td class="warning">性别</td>
+        <td class="danger">年龄</td>
+        <td class="info">角色</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ms-for="el in @datalist">
+        <td >{{el.id}}</td>
+        <td >{{el.showName}}</td>
+        <td>{{el.logingName}}</td>
+        <td >{{el.logingPassword}}</td>
+        <td >{{el.createTime}}</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<script src="https://unpkg.com/avalon2@2.2.8/dist/avalon.js"></script>
+<script th:src="@{/js/user.js}"></script>
+</html>

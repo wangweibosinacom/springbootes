@@ -26,10 +26,10 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.springframework.boot</groupId> -->
+<!-- 			<artifactId>spring-boot-starter-web</artifactId> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
@@ -55,23 +55,23 @@
 			<version>2.6.0</version>
 		</dependency>
 		<!-- 页面 -->
-        <dependency>  
-            <groupId>org.webjars</groupId>  
-            <artifactId>bootstrap</artifactId>  
-            <version>3.3.5</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>org.webjars</groupId>  
-            <artifactId>jquery</artifactId>  
-            <version>3.1.1</version>  
-        </dependency> 
-       <!--thymeleaf模板jar-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-        
-        
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+		<!--thymeleaf模板jar -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
@@ -94,6 +94,13 @@
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
 			<version>1.2.3</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
 
 	</dependencies>
 
